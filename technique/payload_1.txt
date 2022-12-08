@@ -1,0 +1,13 @@
+# define the target address and the shellcode
+TARGET_ADDRESS = "\x00\x00\x00\x00"
+SHELLCODE = "\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"
+
+# define the padding and no-op instructions
+PADDING = "\x41" * 32
+NO_OPS = "\x90" * 64
+
+# generate the payload using the target address, shellcode, padding, and no-ops
+payload = TARGET_ADDRESS + SHELLCODE + PADDING + NO_OPS
+
+# print the payload
+print(payload)
